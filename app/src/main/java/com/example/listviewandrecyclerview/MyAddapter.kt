@@ -8,7 +8,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.my_items_list.view.*
 
-class MyAddapter(val items : ArrayList<String>, val context : Context) : RecyclerView.Adapter<ViewHolder>() {
+class MyAddapter(val items : ArrayList<String>, val context : Context)
+    : RecyclerView.Adapter<ViewHolder>() {
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 

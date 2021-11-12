@@ -3,12 +3,13 @@ package com.example.listviewandrecyclerview
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 import kotlinx.android.synthetic.main.my_items_list.*
 
 class RecyclerView : AppCompatActivity() {
 
-    val animalArrayList :  ArrayList<String> = ArrayList()
+    val myArrayList :  ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,31 +21,35 @@ class RecyclerView : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        recyclerView.adapter = MyAddapter(animalArrayList, this)
+        recyclerView.adapter = MyAddapter(myArrayList, this)
+
+        // for notify the recycler view... When we delete or add data into recycler view
+        val myAddapter : RecyclerView.Adapter<ViewHolder>? = null
+        myAddapter?.notifyDataSetChanged()
 
     }
 
     fun addItemsInArrayList() {
-        animalArrayList.add("Red")
-        animalArrayList.add("Green")
-        animalArrayList.add("Blue")
-        animalArrayList.add("Cyan")
-        animalArrayList.add("Yellow")
-        animalArrayList.add("Purple")
-        animalArrayList.add("Chartreuse")
-        animalArrayList.add("Chocolate")
-        animalArrayList.add("DarkCyan")
-        animalArrayList.add("DarkGrey")
-        animalArrayList.add("DarkOrange")
-        animalArrayList.add("Aqua")
-        animalArrayList.add("AntiqueWhite")
-        animalArrayList.add("AliceBlue")
-        animalArrayList.add("Aquamarine")
-        animalArrayList.add("BlueViolet")
-        animalArrayList.add("DarkRed")
-        animalArrayList.add("DarkSlateGrey")
-        animalArrayList.add("DeepPink")
-        animalArrayList.add("ForestGreen")
-        animalArrayList.add("FireBrick")
+        myArrayList.add("Red")
+        myArrayList.add("Green")
+        myArrayList.add("Blue")
+        myArrayList.add("Cyan")
+        myArrayList.add("Yellow")
+        myArrayList.add("Purple")
+        myArrayList.add("Chartreuse")
+        myArrayList.add("Chocolate")
+        myArrayList.add("DarkCyan")
+        myArrayList.add("DarkGrey")
+        myArrayList.add("DarkOrange")
+        myArrayList.add("Aqua")
+        myArrayList.add("AntiqueWhite")
+        myArrayList.add("AliceBlue")
+        myArrayList.add("Aquamarine")
+        myArrayList.add("BlueViolet")
+        myArrayList.add("DarkRed")
+        myArrayList.add("DarkSlateGrey")
+        myArrayList.add("DeepPink")
+        myArrayList.add("ForestGreen")
+        myArrayList.add("FireBrick")
     }
 }
